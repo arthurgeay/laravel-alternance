@@ -1,23 +1,31 @@
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Entreprise</title>
-    </head>
-    <body>
+@extends('layouts.app')
 
-    <a href="{{ route('company.create') }}">Ajouter une entreprise</a>
-    @foreach($companies as $company)
-        <p>
-            <a href="{{ route('company.show', $company->id) }}">{{ $company->name }}
-            </a> - <a href="{{ route('company.edit', $company->id) }}">Editer une entreprise</a>
-            - <a href="{{ route('company.delete', $company->id) }}">Supprimer une entreprise</a>
-        </p>
-    @endforeach
+@section('content')
+
+    <div class="container">
+
+        <a href="{{ route('company.create') }}" class="btn btn-primary">Ajouter une entreprise</a>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Nom de l'entreprise</th>
+                <th scope="col">Editer</th>
+                <th scope="col">Supprimer</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($companies as $company)
+                <tr>
+                    <th scope="row"><a href="{{ route('company.show', $company->id) }}">{{ $company->name }}
+                        </a></th>
+                    <td><a href="{{ route('company.edit', $company->id) }}">Editer une entreprise</a></td>
+                    <td><a href="{{ route('company.delete', $company->id) }}">Supprimer une entreprise</a></td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
 
 
-    </body>
-</html>
+@endsection

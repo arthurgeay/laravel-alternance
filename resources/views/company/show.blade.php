@@ -1,13 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $company->name }}</title>
-</head>
-    <body>
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
         <h1>{{ $company->name }}</h1>
         <p>Secteur d'activité : {{ $company->area_activity }}</p>
         <p>Adresse : {{ $company->address }}</p>
@@ -21,5 +15,6 @@
         @foreach($contacts as $contact)
             <p>{{ $contact->fullname }} - {{ $contact->jobname }} - {{ $contact->phone }} - {{ $contact->mail }} - <a href="{{ route('contact.edit', $contact->id) }}">Modifier</a> | <a href="{{ route('contact.delete', $contact->id) }}">Supprimer</a></p>
         @endforeach
-    </body>
-</html>
+    </div>
+
+@endsection

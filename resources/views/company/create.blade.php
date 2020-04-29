@@ -1,37 +1,36 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ajouter une entreprise</title>
-</head>
-    <body>
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
         <h1>Ajouter une entreprise</h1>
         <form method="post" action="{{ route('company.store') }}">
             @csrf
-            <p>
+            <div class="form-group">
                 <label for="name">Nom de l'entreprise</label>
-                <input type="text" id="name" name="name" />
-            </p>
-            <p>
+                <input type="text" id="name" name="name" class="form-control" />
+            </div>
+
+            <div class="form-group">
                 <label for="area_activity">Secteur d'activité</label>
-                <input type="text" id="area_activity" name="area_activity" />
-            </p>
-            <p>
+                <input type="text" id="area_activity" name="area_activity" class="form-control" />
+            </div>
+
+            <div class="form-group">
                 <label for="address">Adresse</label>
-                <textarea id="address" name="address"></textarea>
-            </p>
-            <p>
+                <textarea id="address" name="address" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
                 <label for="email">Adresse e-mail</label>
-                <input type="email" id="email" name="email" placeholder="Adresse e-mail" />
-            </p>
-            <p>
+                <input type="email" id="email" name="email" placeholder="Adresse e-mail" class="form-control"/>
+            </div>
+
+            <div class="form-group">
                 <label for="phone">Numéro de téléphone</label>
-                <input type="text" id="phone" name="phone" placeholder="Numéro de téléphone" />
-            </p>
-            <input type="submit" />
+                <input type="text" id="phone" name="phone" placeholder="Numéro de téléphone" class="form-control"/>
+            </div>
+
+            <button type="submit" class="btn btn-success">Ajouter</button>
         </form>
-    </body>
-</html>
+    </div>
+@endsection
