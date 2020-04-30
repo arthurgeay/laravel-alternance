@@ -20,6 +20,12 @@ class ApplicationController extends Controller
         $this->middleware('auth');
     }
 
+    public function index()
+    {
+        $applications = Application::where('user_id', Auth::user()->getAuthIdentifier())->get();
+        return view('application.index', compact('applications'));
+    }
+
     public function create()
     {
         $companies = Company::with('contacts')->get();

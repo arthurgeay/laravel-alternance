@@ -37,5 +37,8 @@ Route::post('/contact/editStore/{id}', 'ContactController@editStore')->name('con
 Route::get('/contact/delete/{id}', 'ContactController@delete')->name('contact.delete');
 
 /** APPLICATION */
+Route::get('/application', 'ApplicationController@index')->name('application.home');
 Route::get('/application/create', 'ApplicationController@create')->name('application.create');
 Route::post('/application/store', 'ApplicationController@store')->name('application.store');
+Route::get('/application/edit/{id}', 'ApplicationController@edit')->name('application.edit');
+

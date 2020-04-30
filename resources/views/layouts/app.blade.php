@@ -30,7 +30,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <a class="nav-link" href="{{ route('company.home') }}">Entreprises</a>
+                        <li><a class="nav-link" href="{{ route('company.home') }}">Entreprises</a></li>
+                        <li><a class="nav-link" href="{{ route('application.home') }}">Demandes</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
