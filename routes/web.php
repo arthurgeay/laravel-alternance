@@ -35,3 +35,7 @@ Route::get('/contact/create/{id}', 'ContactController@create')->name('contact.cr
 Route::get('/contact/edit/{id}', 'ContactController@edit')->name('contact.edit');
 Route::post('/contact/editStore/{id}', 'ContactController@editStore')->name('contact.editStore');
 Route::get('/contact/delete/{id}', 'ContactController@delete')->name('contact.delete');
+
+/** APPLICATION */
+Route::get('/application/create', 'ApplicationController@create')->name('application.create');
+Route::post('/application/store', 'ApplicationController@store')->name('application.store');
