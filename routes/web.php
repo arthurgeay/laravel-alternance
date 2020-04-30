@@ -42,3 +42,6 @@ Route::get('/application/create', 'ApplicationController@create')->name('applica
 Route::post('/application/store', 'ApplicationController@store')->name('application.store');
 Route::get('/application/edit/{id}', 'ApplicationController@edit')->name('application.edit');
 Route::post('/application/editStore/{id}', 'ApplicationController@editStore')->name('application.editStore');
+
+/** USER */
+Route::get('/user', 'UserController@index')->name('user.index');
