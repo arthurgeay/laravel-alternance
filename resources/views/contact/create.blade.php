@@ -25,7 +25,7 @@
                 <input type="text" id="phone" name="phone" class="form-control" />
             </div>
 
-            <button type="submit" class="btn btn-success">Editer</button>
+            <button type="submit" class="btn btn-success">Ajouter</button>
 
         </form>
 <div>

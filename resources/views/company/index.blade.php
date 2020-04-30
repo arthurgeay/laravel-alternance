@@ -4,7 +4,7 @@
 
     <div class="container">
 
-        <a href="{{ route('company.create') }}" class="btn btn-primary">Ajouter une entreprise</a>
+        <a style="position: fixed; top: 10%; left: 5%;" href="{{ route('company.create') }}" class="btn btn-primary">Ajouter une entreprise</a>
 
         <table class="table">
             <thead>
