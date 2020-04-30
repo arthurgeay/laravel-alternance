@@ -20,7 +20,7 @@ class CreateContactsTable extends Migration
             $table->string('phone');
             $table->string('mail');
             $table->unsignedBigInteger('company_id');
-            $table->foreign('company_id')->references('id')->on('companies');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
         });
     }
 
