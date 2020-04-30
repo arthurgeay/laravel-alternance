@@ -30,6 +30,7 @@ Route::get('/company/delete/{id}', 'CompanyController@delete')->name('company.de
 
 /** CONTACT */
 Route::post('/contact/create/{id}', 'ContactController@store')->name('contact.store');
+Route::get('/contact/create/{id}', 'ContactController@create')->name('contact.create');
 
 Route::get('/contact/edit/{id}', 'ContactController@edit')->name('contact.edit');
 Route::post('/contact/editStore/{id}', 'ContactController@editStore')->name('contact.editStore');

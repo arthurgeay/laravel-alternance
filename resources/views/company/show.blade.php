@@ -11,7 +11,7 @@
         <a href="{{ route('company.edit', $company->id) }}">Editer l'entreprise</a>
         <a href="{{ route('company.delete', $company->id) }}">Supprimer l'entreprise</a>
 
-        <h2>Liste des contacts - <a href="{{ route('company.edit', $company->id) }}">Ajouter un contact</a></h2>
+        <h2>Liste des contacts - <a href="{{ route('contact.create', $company->id) }}">Ajouter un contact</a></h2>
         @foreach($contacts as $contact)
             <p>{{ $contact->fullname }} - {{ $contact->jobname }} - {{ $contact->phone }} - {{ $contact->mail }} - <a href="{{ route('contact.edit', $contact->id) }}">Modifier</a> | <a href="{{ route('contact.delete', $contact->id) }}">Supprimer</a></p>
         @endforeach

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\Company;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -15,6 +16,11 @@ class ContactController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function create($companyId){
+        $company = Company::where('id', $companyId)->first();
+        return view('contact.create', compact('company'));
     }
 
     public function store(Request $request, $companyId)
