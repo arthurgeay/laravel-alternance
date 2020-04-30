@@ -45,4 +45,26 @@ class ApplicationController extends Controller
 
         return redirect()->route('company.home');
     }
+
+    public function edit($applicationId)
+    {
+        $application =  Application::where('id', $applicationId)->first();
+        $companies = Company::with('contacts')->get();
+        return view('application.edit', compact(['companies', 'application']));
+    }
+
+    public function editStore(Request $request, $applicationId)
+    {
+        $application = Application::find($applicationId);
+
+        $application->company_id = $request->get('company_id');
+        $application->contact_id = $request->get('contact_id');
+        $application->user_id = Auth::user()->getAuthIdentifier();
+        $application->description = $request->get('description');
+        $application->contact_type = $request->get('contact_type');
+        $application->state = $request->get('state');
+        $application->save();
+
+        return redirect()->route('application.edit', ['id' => $application->id]);
+    }
 }
