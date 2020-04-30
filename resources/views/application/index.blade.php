@@ -17,7 +17,7 @@
                 <tr>
                     <th scope="row"><a href="{{ route('company.show', $application->company->id) }}">{{ $application->company->name }}</a></th>
                     <td><a href="{{ route('application.edit', $application->id) }}">Editer une demande</a></td>
-                    <td><a href="#">Supprimer une demande</a></td>
+                    <td><a href="{{ route('application.delete', $application->id) }}">Supprimer une demande</a></td>
                 </tr>
             @endforeach
             </tbody>

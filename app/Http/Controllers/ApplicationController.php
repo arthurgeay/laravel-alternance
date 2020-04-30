@@ -43,7 +43,7 @@ class ApplicationController extends Controller
         $application->state = $request->get('state');
         $application->save();
 
-        return redirect()->route('company.home');
+        return redirect()->route('application.home');
     }
 
     public function edit($applicationId)
@@ -65,6 +65,14 @@ class ApplicationController extends Controller
         $application->state = $request->get('state');
         $application->save();
 
-        return redirect()->route('application.edit', ['id' => $application->id]);
+        return redirect()->route('application.home');
+    }
+
+    public function delete($applicationId)
+    {
+        $application = Application::find($applicationId);
+        $application->delete();
+
+        return redirect()->route('application.home');
     }
 }
