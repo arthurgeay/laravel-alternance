@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -24,5 +25,13 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function alcohol(Request $request){
+        $user = User::find($request->get('userId'));
+        $user->alcohol = $request->get('newAlcohol');
+        $user->save();
+
+        return redirect()->route('home');
     }
 }

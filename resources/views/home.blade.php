@@ -5,6 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
         <h1>{{ Auth::user()->name }} <span class="badge"><img src="{{URL::asset('badges/wati_gold.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" ></span></h1>
+            <form method="POST" action="{{ route('home.alcohol') }}">
+                @csrf
+                <input type="hidden" name="userId" value="{{ Auth::user()->id }}">
+                @if (Auth::user()->alcohol)
+                    <input type="hidden" value="0" name="newAlcohol">
+                    <input class="btn btn-info" type="submit" value="Je ne bois pas d'alcool !">
+                @else
+                    <input type="hidden" value="1" name="newAlcohol">
+                    <input class="btn btn-info" type="submit" value="Je suis un gros soifard !">
+                @endif
+            </form>
             <div class="card">
                 <div class="card-header">Bonjour {{ Auth::user()->name }}, vous êtes membres <span class="text-warning">WATIBULLE GOLD</span></div>
 
