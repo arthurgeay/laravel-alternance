@@ -19,7 +19,6 @@
             </h1>
             <form method="POST" action="{{ route('home.alcohol') }}">
                 @csrf
-                <input type="hidden" name="userId" value="{{ Auth::user()->id }}">
                 @if (Auth::user()->alcohol)
                     <input type="hidden" value="0" name="newAlcohol">
                     <input class="btn btn-info" type="submit" value="Je ne bois pas d'alcool !">

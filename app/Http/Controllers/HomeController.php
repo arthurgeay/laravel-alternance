@@ -32,7 +32,7 @@ class HomeController extends Controller
     }
 
     public function alcohol(Request $request){
-        $user = User::find($request->get('userId'));
+        $user = Auth::user();
         $user->alcohol = $request->get('newAlcohol');
         $user->save();
 
