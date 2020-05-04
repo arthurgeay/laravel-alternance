@@ -18,6 +18,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', function (){
     return redirect('/');
 });
+Route::post('/home', 'HomeController@alcohol')->name('home.alcohol');
 
 /** COMPANY */
 Route::get('/company', 'CompanyController@index')->name('company.home');
