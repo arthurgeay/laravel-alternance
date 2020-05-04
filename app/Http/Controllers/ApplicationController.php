@@ -34,6 +34,10 @@ class ApplicationController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'description' => ['required'],
+        ]);
+
         $application = new Application();
         $application->company_id = $request->get('company_id');
         $application->contact_id = $request->get('contact_id');
