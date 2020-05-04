@@ -7,7 +7,7 @@
             <div class="flex-row d-flex align-items-center justify-content-between">
                 <h1>{{ Auth::user()->name }} {{ Auth::user()->alcohol }}
                     <span class="badge">
-                    @if (Auth::user()->alcohol = 0)
+                    @if (Auth::user()->alcohol == 0)
                         @if ($badge < 10)
                             <img src="{{URL::asset('badges/rsa.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
                         @elseif ($badge >= 10 and $badge < 30)
