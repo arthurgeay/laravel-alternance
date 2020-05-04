@@ -73,6 +73,14 @@ class CompanyController extends Controller
 
     public function editStore(Request $request, $companyId)
     {
+        $request->validate([
+            'name' => ['required'],
+            'area_activity' => ['required'],
+            'address' => ['required'],
+            'email' => ['required', 'email'],
+            'phone' => ['required'],
+        ]);
+
         $company = Company::find($companyId);
         $company->name = $request->get('name');
         $company->area_activity = $request->get('area_activity');
