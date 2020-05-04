@@ -7,7 +7,7 @@
             <h1>Liste des utilisateurs</h1><br>
             @foreach($users as $user)
                 <h3>{{ $user->name }}<span class="badge">
-                @if (Auth::user()->alcohol = 0)
+                @if (Auth::user()->alcohol == 0)
                     @if ($user->applications_count < 10)
                         <img src="{{URL::asset('badges/rsa.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
                     @elseif ($user->applications_count >= 10 and $user->applications_count < 30)
