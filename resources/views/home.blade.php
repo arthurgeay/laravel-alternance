@@ -46,23 +46,23 @@
                 <div class="card-header">Bonjour {{ Auth::user()->name }}, vous êtes membres
                 @if (Auth::user()->alcohol == 0)
                         @if ($badge < 10)
-                            <span class="text-secondary">chômeurs RSA</span>
+                            <span class="text-secondary font-weight-bold">chômeurs RSA</span>
                         @elseif ($badge >= 10 and $badge < 30)
-                            <span class="text-success">WATIBULLE CLASSIC</span>
+                            <span class="text-success font-weight-bold">WATIBULLE CLASSIC</span>
                         @elseif ($badge >= 30 and $badge < 50) 
-                            <span class="text-danger">WATIBULLE ROSE</span>
+                            <span class="text-danger font-weight-bold">WATIBULLE ROSE</span>
                         @elseif ($badge >= 50 and $badge < 100) 
-                            <span class="text-warning">WATIBULLE GOLD</span>
+                            <span class="text-warning font-weight-bold">WATIBULLE GOLD</span>
                         @endif
                     @else
                         @if ($badge < 10)
-                            <span class="text-secondary">chômeurs RSA</span>
+                            <span class="text-secondary font-weight-bold">chômeurs RSA</span>
                         @elseif ($badge >= 10 and $badge < 30)
-                            <span class="text-success">Panaché</span>
+                            <span class="text-success font-weight-bold">Panaché</span>
                         @elseif ($badge >= 30 and $badge < 50) 
-                            <span class="text-danger">GRIMBERGEN</span>
+                            <span class="text-danger font-weight-bold">GRIMBERGEN</span>
                         @elseif ($badge >= 50 and $badge < 100) 
-                            <span class="text-warning">CORONA KING</span>
+                            <span class="text-warning font-weight-bold">CORONA KING</span>
                         @endif
                     @endif
                 </div>
@@ -73,8 +73,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    Vous êtes connecté !
-                    Votre nombre de demande est de <span class="text-success">{{ $badge }}</span>
+                    Votre nombre de demande est de <span class="text-success font-weight-bold">{{ $badge }}</span><br>
+                    Adresse mail: <span class="text-primary font-weight-bold">{{ Auth::user()->email }}</span><br>
+                    Inscrit le : <span class="text-success font-weight-bold">{{ Auth::user()->created_at }}</span>
                 </div>
             </div>
         </div>
