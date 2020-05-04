@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="flex-row d-flex align-items-center justify-content-between">
-                <h1>{{ Auth::user()->name }}
+                <h1>{{ Auth::user()->name }} {{ Auth::user()->alcohol }}
                     <span class="badge">
                     @if ($badge < 10)
                         <img src="{{URL::asset('badges/rsa.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
