@@ -21,6 +21,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::All();
+        $user = User::find($request->get('userId'));
         $badge = Application::where('user_id', Auth::user()->getAuthIdentifier())->count();
         return view('user.index', compact('users'), compact('badge'));
     }

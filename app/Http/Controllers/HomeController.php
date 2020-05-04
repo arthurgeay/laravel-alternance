@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         $badge = Application::where('user_id', Auth::user()->getAuthIdentifier())->count();
-        return view('home', compact('badge'));
+        return view('home', compact('drunk'), compact('badge'));
     }
 
     public function alcohol(Request $request){
