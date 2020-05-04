@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="flex-row d-flex align-items-center justify-content-between">
-                <h1>{{ Auth::user()->name }} {{ Auth::user()->alcohol }}
+                <h1>{{ Auth::user()->name }}
                     <span class="badge">
                     @if (Auth::user()->alcohol == 0)
                         @if ($badge < 10)
