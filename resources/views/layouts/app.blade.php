@@ -32,6 +32,7 @@
                     <ul class="navbar-nav mr-auto">
                         <li><a class="nav-link" href="{{ route('company.home') }}">Entreprises</a></li>
                         <li><a class="nav-link" href="{{ route('application.home') }}">Demandes</a></li>
+                        <li><a class="nav-link" href="{{ route('user.index') }}">Utilisateurs</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

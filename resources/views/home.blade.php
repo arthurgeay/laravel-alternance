@@ -14,7 +14,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     Vous êtes connecté !
                 </div>
             </div>
