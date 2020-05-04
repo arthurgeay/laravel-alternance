@@ -35,7 +35,11 @@ class ApplicationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'company_id' => ['required'],
+            'contact_id' => ['required'],
+            'contact_type' => ['required'],
             'description' => ['required'],
+            'state' => ['required'],
         ]);
 
         $application = new Application();
@@ -52,6 +56,7 @@ class ApplicationController extends Controller
 
     public function edit($applicationId)
     {
+
         $application =  Application::where('id', $applicationId)->first();
         $companies = Company::with('contacts')->get();
         return view('application.edit', compact(['companies', 'application']));
@@ -59,6 +64,14 @@ class ApplicationController extends Controller
 
     public function editStore(Request $request, $applicationId)
     {
+        $request->validate([
+            'company_id' => ['required'],
+            'contact_id' => ['required'],
+            'contact_type' => ['required'],
+            'description' => ['required'],
+            'state' => ['required'],
+        ]);
+
         $application = Application::find($applicationId);
 
         $application->company_id = $request->get('company_id');
