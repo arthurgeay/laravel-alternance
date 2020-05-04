@@ -7,14 +7,26 @@
             <div class="flex-row d-flex align-items-center justify-content-between">
                 <h1>{{ Auth::user()->name }} {{ Auth::user()->alcohol }}
                     <span class="badge">
-                    @if ($badge < 10)
-                        <img src="{{URL::asset('badges/rsa.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
-                    @elseif ($badge >= 10 and $badge < 30)
-                        <img src="{{URL::asset('badges/wati_classic.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
-                    @elseif ($badge >= 30 and $badge < 50) 
-                        <img src="{{URL::asset('badges/wati_rose.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
-                    @elseif ($badge >= 50 and $badge < 100) 
-                        <img src="{{URL::asset('badges/wati_gold.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
+                    @if (Auth::user()->alcohol = 0)
+                        @if ($badge < 10)
+                            <img src="{{URL::asset('badges/rsa.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
+                        @elseif ($badge >= 10 and $badge < 30)
+                            <img src="{{URL::asset('badges/wati_classic.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
+                        @elseif ($badge >= 30 and $badge < 50) 
+                            <img src="{{URL::asset('badges/wati_rose.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
+                        @elseif ($badge >= 50 and $badge < 100) 
+                            <img src="{{URL::asset('badges/wati_gold.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
+                        @endif
+                    @else
+                        @if ($badge < 10)
+                            <img src="{{URL::asset('badges/rsa.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
+                        @elseif ($badge >= 10 and $badge < 30)
+                            <img src="{{URL::asset('badges/panache.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
+                        @elseif ($badge >= 30 and $badge < 50) 
+                            <img src="{{URL::asset('badges/grimbergen.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
+                        @elseif ($badge >= 50 and $badge < 100) 
+                            <img src="{{URL::asset('badges/corona.png')}}" alt="" style="position:relative;top:-.5rem;width:4rem" >
+                        @endif
                     @endif
                     </span>
                 </h1>
