@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea id="description" name="description" class="form-control">{{ $application->description }}</textarea>
+                <textarea id="description" name="description" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}">{{ old('description', $application->description) }}</textarea>
             </div>
             <div class="form-group">
                 <label for="state">Etat de la demande</label>
