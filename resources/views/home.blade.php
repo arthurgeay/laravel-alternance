@@ -43,15 +43,29 @@
                 </form>
             </div>
             <div class="card">
-                <div class="card-header">Bonjour {{ Auth::user()->name }}, vous êtes membres                @if ($badge < 10)
-                    <span class="text-secondary">chômeurs RSA</span>
-                @elseif ($badge >= 10 and $badge < 30)
-                    <span class="text-success">WATIBULLE CLASSIC</span>
-                @elseif ($badge >= 30 and $badge < 50) 
-                    <span class="text-danger">WATIBULLE ROSE</span>
-                @elseif ($badge >= 50 and $badge < 100) 
-                    <span class="text-warning">WATIBULLE GOLD</span>
-                @endif</div>
+                <div class="card-header">Bonjour {{ Auth::user()->name }}, vous êtes membres
+                @if (Auth::user()->alcohol == 0)
+                        @if ($badge < 10)
+                            <span class="text-secondary">chômeurs RSA</span>
+                        @elseif ($badge >= 10 and $badge < 30)
+                            <span class="text-success">WATIBULLE CLASSIC</span>
+                        @elseif ($badge >= 30 and $badge < 50) 
+                            <span class="text-danger">WATIBULLE ROSE</span>
+                        @elseif ($badge >= 50 and $badge < 100) 
+                            <span class="text-warning">WATIBULLE GOLD</span>
+                        @endif
+                    @else
+                        @if ($badge < 10)
+                            <span class="text-secondary">chômeurs RSA</span>
+                        @elseif ($badge >= 10 and $badge < 30)
+                            <span class="text-success">Panaché</span>
+                        @elseif ($badge >= 30 and $badge < 50) 
+                            <span class="text-danger">GRIMBERGEN</span>
+                        @elseif ($badge >= 50 and $badge < 100) 
+                            <span class="text-warning">CORONA KING</span>
+                        @endif
+                    @endif
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
