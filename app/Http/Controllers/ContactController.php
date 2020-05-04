@@ -51,6 +51,13 @@ class ContactController extends Controller
 
     public function editStore(Request $request, $contactId)
     {
+        $request->validate([
+            'fullname' => ['required'],
+            'jobname' => ['required'],
+            'mail' => ['required'],
+            'phone' => ['required'],
+        ]);
+
         $contact = Contact::find($contactId);
         $company = $contact->company;
 
