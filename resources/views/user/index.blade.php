@@ -6,6 +6,7 @@
 
             <h1>Liste des utilisateurs</h1><br>
             @foreach($users as $user)
+            <div class="d-flex flex-row align-items-center shadow mb-4 p-4" style="padding-bottom:0!important;width:fit-content;border-radius:8px;">
                 <h3>{{ $user->name }}<span class="badge">
                 @if ($user->alcohol == 0)
                     @if ($user->applications_count < 10)
@@ -30,6 +31,7 @@
                 @endif
                 
                 </span></h3>
+                </div>
             @endforeach
 
     </div>
