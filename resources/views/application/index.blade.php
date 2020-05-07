@@ -10,7 +10,7 @@
             <button class="btn btn-secondary m-2" id="todo">A faire</button>
             <button class="btn btn-primary m-2" id="running">En cours</button>
             <button class="btn btn-success m-2" id="ended">Terminé</button>
-            <button class="btn btn-warning m-2" id="report">Rappel</button>
+            <button class="btn btn-warning m-2" id="reported">Rappel</button>
         </div>
         <div class="table-responsive">
             <table class="table">
@@ -46,6 +46,24 @@
     <script>
     const badges = document.querySelectorAll("td span.badge");
 
+    document.querySelector('#all').addEventListener('click', ()=>{
+        for (let i = 0; i < badges.length; i++) {
+            badges[i].parentElement.parentElement.classList.remove('disappear');
+        }
+    });
+    document.querySelector('#todo').addEventListener('click', ()=>{
+        sortBadge("A faire")
+    });
+    document.querySelector('#running').addEventListener('click', ()=>{
+        sortBadge("En cours")
+    });
+    document.querySelector('#ended').addEventListener('click', ()=>{
+        sortBadge("Terminé")
+    });
+    document.querySelector('#reported').addEventListener('click', ()=>{
+        sortBadge("Rappel")
+    });
+
     function sortBadge(status) {
         for (let y = 0; y < badges.length; y++) {
             badges[y].parentElement.parentElement.classList.remove('disappear');
@@ -55,14 +73,5 @@
         }
     }
 
-    document.querySelector('#all').addEventListener('click', ()=>{
-        for (let i = 0; i < badges.length; i++) {
-            badges[i].parentElement.parentElement.classList.remove('disappear');
-        }
-    });
-    document.querySelector('#todo').addEventListener('click', sortBadge("A faire"));
-    document.querySelector('#running').addEventListener('click', sortBadge("En cours"));
-    document.querySelector('#ended').addEventListener('click', sortBadge("Terminé"));
-    document.querySelector('#report').addEventListener('click', sortBadge("Rappel"));
     </script>
 @endsection

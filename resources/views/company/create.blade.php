@@ -37,7 +37,7 @@
 
             <div class="form-group">
                 <label for="email">Adresse e-mail</label>
-                <input type="email" id="email" name="email" placeholder="Adresse e-mail" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}"/>
+                <input type="email" id="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}"/>
                 @if($errors->has('email'))
                     <div class="invalid-feedback">
                         Veuillez renseigner une adresse e-mail
@@ -47,12 +47,17 @@
 
             <div class="form-group">
                 <label for="phone">Numéro de téléphone</label>
-                <input type="text" id="phone" name="phone" placeholder="Numéro de téléphone" class="form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}" value="{{ old('phone') }}"/>
+                <input type="text" id="phone" name="phone" class="form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}" value="{{ old('phone') }}"/>
                 @if($errors->has('phone'))
                     <div class="invalid-feedback">
                         Veuillez renseigner un numéro de téléphone
                     </div>
                 @endif
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Lien du logo <i>(optionnel)<i></label>
+                <input type="text" id="imgLink" class="form-control" name="imgLink" value="{{ old('imgLink') }}"/>
             </div>
 
             <button type="submit" class="btn btn-success">Ajouter</button>

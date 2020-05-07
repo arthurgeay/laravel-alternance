@@ -19,7 +19,7 @@
                 <tbody>
                 @foreach($companies as $company)
                     <tr>
-                        <th scope="row"><a href="{{ route('company.show', $company->id) }}">{{ $company->name }}
+                        <th scope="row"><img src="{{ $company->img ? $company->img : 'building.png' }}" style="max-width: 25px; max-height: 25px; margin-right: 10px;"><a href="{{ route('company.show', $company->id) }}">{{ $company->name }}
                             </a></th>
                         <td><a href="{{ route('company.edit', $company->id) }}">Editer une entreprise</a></td>
                         <td><a href="{{ route('contact.create', $company->id) }}">Ajouter un contact</a></td>

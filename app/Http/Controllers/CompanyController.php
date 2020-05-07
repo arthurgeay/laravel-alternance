@@ -51,6 +51,7 @@ class CompanyController extends Controller
         $company->address = $request->get('address');
         $company->email = $request->get('email');
         $company->phone = $request->get('phone');
+        $company->img = $request->get('imgLink');
         $company->save();
 
         return redirect()->route('company.home');
