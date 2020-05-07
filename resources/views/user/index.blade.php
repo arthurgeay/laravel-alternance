@@ -13,9 +13,9 @@
                         <img src="{{URL::asset('badges/rsa.png')}}" alt="" style="position:relative;top:-.5rem;width:3.5rem" >
                     @elseif ($user->applications_count >= 10 and $user->applications_count < 30)
                         <img src="{{URL::asset('badges/wati_classic.png')}}" alt="" style="position:relative;top:-.5rem;width:3.5rem" >
-                    @elseif ($user->applications_count >= 30 and $user->applications_count < 50) 
+                    @elseif ($user->applications_count >= 30 and $user->applications_count < 50)
                         <img src="{{URL::asset('badges/wati_rose.png')}}" alt="" style="position:relative;top:-.5rem;width:3.5rem" >
-                    @elseif ($user->applications_count >= 50 and $user->applications_count < 100) 
+                    @elseif ($user->applications_count >= 50 and $user->applications_count < 100)
                         <img src="{{URL::asset('badges/wati_gold.png')}}" alt="" style="position:relative;top:-.5rem;width:3.5rem" >
                     @endif
                 @else
@@ -23,9 +23,9 @@
                         <img src="{{URL::asset('badges/rsa.png')}}" alt="" style="position:relative;top:-.5rem;width:3.5rem" >
                     @elseif ($user->applications_count >= 10 and $user->applications_count < 30)
                         <img src="{{URL::asset('badges/panache.png')}}" alt="" style="position:relative;top:-.5rem;width:3.5rem" >
-                    @elseif ($user->applications_count >= 30 and $user->applications_count < 50) 
+                    @elseif ($user->applications_count >= 30 and $user->applications_count < 50)
                         <img src="{{URL::asset('badges/grimbergen.png')}}" alt="" style="position:relative;top:-.5rem;width:3.5rem" >
-                    @elseif ($user->applications_count >= 50 and $user->applications_count < 100) 
+                    @elseif ($user->applications_count >= 50 and $user->applications_count < 100)
                         <img src="{{URL::asset('badges/corona.png')}}" alt="" style="position:relative;top:-.5rem;width:3.5rem" >
                     @endif
                 @endif
@@ -33,6 +33,8 @@
                 <h3><alt="" style="position:relative;top:-.5rem;width:3.5rem"/>{{ $user->applications_count }} {{ $user->applications_count > 1 ? 'demandes' : 'demande'}}</h3>
                 </div>
             @endforeach
+
+        {{ $users->links() }}
 
     </div>
 
