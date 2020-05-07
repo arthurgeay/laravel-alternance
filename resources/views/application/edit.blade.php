@@ -22,11 +22,9 @@
             <div class="form-group">
                 <label for="contact">Contact de l'entreprise</label>
                 <select class="form-control {{ $errors->has('contact_id') ? 'is-invalid' : '' }}" id="contact" name="contact_id">
-                    @foreach($companies as $company)
-                        @foreach($company->contacts as $contact)
-                            <option value="{{ $contact->id }}" @if($application->contact->id == $contact->id) selected @endif}}><strong>{{ $contact->fullname }}</strong> - {{ $contact->jobname }} chez {{ $company->name }}</option>
+                        @foreach($application->company->contacts as $contact)
+                            <option class="companyContact" value="{{ $contact->id }}" @if($application->contact->id == $contact->id) selected @endif}}><strong>{{ $contact->fullname }}</strong> - {{ $contact->jobname }}</option>
                         @endforeach
-                    @endforeach
                 </select>
                 @if($errors->has('contact_id'))
                     <div class="invalid-feedback">
@@ -74,5 +72,6 @@
             <input type="button" value="Retour" class="btn btn-primary" onclick="history.go(-1)">
             <button type="submit" class="btn btn-primary">Modifier</button>
         </form>
+        <script src="/laravel-alternance/resources/js/contact.js"></script>
     </div>
 @endsection
