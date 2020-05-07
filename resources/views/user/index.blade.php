@@ -30,7 +30,7 @@
                     @endif
                 @endif
                 </span></h3>
-                <h3><alt="" style="position:relative;top:-.5rem;width:3.5rem"/>{{ $user->applications_count }} demandes</h3>
+                <h3><alt="" style="position:relative;top:-.5rem;width:3.5rem"/>{{ $user->applications_count }} {{ $user->applications_count > 1 ? 'demandes' : 'demande'}}</h3>
                 </div>
             @endforeach
 
