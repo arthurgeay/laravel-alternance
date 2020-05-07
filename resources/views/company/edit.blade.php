@@ -61,10 +61,9 @@
                 <label for="phone">Lien du logo <i>(optionnel)<i></label>
                 <input type="text" id="imgLink" class="form-control" name="imgLink" value="{{ old('imgLink') }}"/>
             </div>
-
-            <button type="submit" class="btn btn-success">Modifier</button>
+            <input type="button" value="Retour" class="btn btn-primary" onclick="history.go(-1)">
+            <button type="submit" class="btn btn-success" >Modifier</button>
         </form>
-
         <hr>
     </div>
 @endsection

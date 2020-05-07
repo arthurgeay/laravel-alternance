@@ -71,7 +71,7 @@
                     </div>
                 @endif
             </div>
-
+            <input type="button" value="Retour" class="btn btn-primary" onclick="history.go(-1)">
             <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>
     </div>
