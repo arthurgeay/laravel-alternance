@@ -20,7 +20,7 @@ class CompanyController extends Controller
 
     public function index()
     {
-        $companies = Company::All();
+        $companies = Company::simplePaginate(10);
 
         return view('company.index', compact('companies'));
     }

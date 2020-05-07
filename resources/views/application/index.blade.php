@@ -45,7 +45,7 @@
     </div>
     <script>
     const badges = document.querySelectorAll("td span.badge");
-  
+
     function sortBadge(status) {
         for (let y = 0; y < badges.length; y++) {
             badges[y].parentElement.parentElement.classList.remove('disappear');
