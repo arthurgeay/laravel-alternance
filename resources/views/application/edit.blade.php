@@ -69,7 +69,7 @@
                     </div>
                 @endif
             </div>
-
+            <input type="button" value="Retour" class="btn btn-primary" onclick="history.go(-1)">
             <button type="submit" class="btn btn-primary">Modifier</button>
         </form>
         <script src="/laravel-alternance/resources/js/contact.js"></script>

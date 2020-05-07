@@ -3,6 +3,9 @@
 @section('content')
     <div class="container">
         <h1>{{ $company->name }}</h1>
+        <div style="text-align: center;">
+            <img src="{{ $company->img ? $company->img : '' }}" style="max-width: 80px; max-height: 80px;">
+        </div>
         <p>Secteur d'activité : {{ $company->area_activity }}</p>
         <p>Adresse : {{ $company->address }}</p>
         <p>Adresse e-mail :{{ $company->email }}</p>
@@ -15,6 +18,9 @@
         @foreach($contacts as $contact)
             <p>{{ $contact->fullname }} - {{ $contact->jobname }} - {{ $contact->phone }} - {{ $contact->mail }} - <a href="{{ route('contact.edit', $contact->id) }}">Modifier</a> | <a href="{{ route('contact.delete', $contact->id) }}">Supprimer</a></p>
         @endforeach
+        <form>
+        <input type="button" value="Retour" class="btn btn-primary" onclick="history.go(-1)">
+        </form>
     </div>
 
 @endsection

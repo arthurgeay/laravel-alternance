@@ -44,9 +44,8 @@
                     </div>
                 @endif
             </div>
-
+            <input type="button" value="Retour" class="btn btn-primary" onclick="history.go(-1)">
             <button type="submit" class="btn btn-success">Ajouter</button>
-
         </form>
 <div>
 @endsection
