@@ -9,7 +9,7 @@ class ApiCompanyController extends Controller
 {
     public function show($companyId)
     {
-        $company = Company::where('id', $companyId)->first();
+        $company = Company::with('contacts')->where('id', $companyId)->first();
         if (!$company) {
             return response()->json([
                 'statut' => 'Cette entreprise n\'existe pas'
