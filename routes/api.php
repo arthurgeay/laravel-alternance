@@ -24,3 +24,5 @@ Route::middleware('auth.apitoken')->group(function() {
 });
 
 
+Route::get('/user/{id}', 'ApiUserController@show')->name('user.show');
+
