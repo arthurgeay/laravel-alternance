@@ -21,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/company/all','ApiCompanyController@index')->name('company.all');
 Route::get('/company/{id}', 'ApiCompanyController@show')->name('company.show');
 
+Route::get('/user/{id}', 'ApiUserController@show')->name('user.show');
+
