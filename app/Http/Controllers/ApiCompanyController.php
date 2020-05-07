@@ -10,7 +10,7 @@ class ApiCompanyController extends Controller
     public function show($companyId)
     {
         $company = Company::where('id', $companyId)->first();
-        if(!$company) {
+        if (!$company) {
             return response()->json([
                 'statut' => 'Cette entreprise n\'existe pas'
             ]);
@@ -18,6 +18,13 @@ class ApiCompanyController extends Controller
 
         return response()->json([
             'company' => $company
+        ]);
+    }
+
+    public function index(){
+        $companies = Company::all();
+        return response()->json([
+            'companies' => $companies
         ]);
     }
 }
