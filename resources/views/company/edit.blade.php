@@ -5,6 +5,9 @@
         <h1>Editer une entreprise</h1>
         <form method="post" action="{{ route('company.editStore', $company->id) }}">
             @csrf
+            <div style="text-align: center;">
+                <img src="{{ $company->img ? $company->img : '' }}" style="max-width: 80px; max-height: 80px;">
+            </div>
             <div class="form-group">
                 <label for="name">Nom de l'entreprise</label>
                 <input type="text" id="name" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name', $company->name) }}"/>
@@ -14,7 +17,6 @@
                     </div>
                 @endif
             </div>
-
             <div class="form-group">
                 <label for="area_activity">Secteur d'activité</label>
                 <input type="text" id="area_activity" name="area_activity" class="form-control {{ $errors->has('area_activity') ? 'is-invalid' : '' }}" value="{{ old('area_activity', $company->area_activity) }}"/>
