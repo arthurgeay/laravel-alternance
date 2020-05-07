@@ -12,7 +12,8 @@ class Company extends Model
         'area_activity',
         'address',
         'email',
-        'phone'
+        'phone',
+        'img'
     ];
 
     public $timestamps = false;
