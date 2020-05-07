@@ -55,6 +55,11 @@
                 @endif
             </div>
 
+            <div class="form-group">
+                <label for="phone">Lien du logo <i>(optionnel)<i></label>
+                <input type="text" id="imgLink" class="form-control" name="imgLink" value="{{ old('imgLink') }}"/>
+            </div>
+
             <button type="submit" class="btn btn-success">Modifier</button>
         </form>
 
