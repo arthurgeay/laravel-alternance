@@ -42,6 +42,7 @@
                 </tbody>
             </table>
         </div>
+        {{ $applications->links() }}
     </div>
     <script>
     const badges = document.querySelectorAll("td span.badge");
