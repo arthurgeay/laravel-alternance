@@ -22,7 +22,7 @@ class ApiCompanyController extends Controller
     }
 
     public function index(){
-        $companies = Company::all();
+        $companies = Company::with('contacts')->get();
         return response()->json([
             'companies' => $companies
         ]);
