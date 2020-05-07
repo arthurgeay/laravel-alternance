@@ -18,6 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/company/all','ApiCompanyController@index')->name('company.all');
-Route::get('/company/{id}', 'ApiCompanyController@show')->name('company.show');
+Route::middleware('auth.apitoken')->group(function() {
+    Route::get('/company/all','ApiCompanyController@index')->name('company.all');
+    Route::get('/company/{id}', 'ApiCompanyController@show')->name('company.show');
+    Route::get('/user/{id}', 'ApiUserController@show')->name('user.show');
+});
 
