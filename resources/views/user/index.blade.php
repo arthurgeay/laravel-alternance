@@ -29,8 +29,8 @@
                         <img src="{{URL::asset('badges/corona.png')}}" alt="" style="position:relative;top:-.5rem;width:3.5rem" >
                     @endif
                 @endif
-                
                 </span></h3>
+                <h3><alt="" style="position:relative;top:-.5rem;width:3.5rem"/>{{ $user->applications_count }} demandes</h3>
                 </div>
             @endforeach
 
