@@ -20,7 +20,7 @@ class UserController extends Controller
     }
     public function index()
     {
-        $users = User::withCount('applications')->get();
+        $users = User::withCount('applications')->simplePaginate(10);
         return view('user.index', compact('users'));
     }
 }

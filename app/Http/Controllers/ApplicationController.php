@@ -22,7 +22,7 @@ class ApplicationController extends Controller
 
     public function index()
     {
-        $applications = Application::where('user_id', Auth::user()->getAuthIdentifier())->simplePaginate(10);
+        $applications = Application::where('user_id', Auth::user()->getAuthIdentifier());
         return view('application.index', compact('applications'));
     }
 
