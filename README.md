@@ -6,6 +6,8 @@ Le projet d'un site web portant sur le sujet de l'alterance.
 
 Notre groupe est composé de quatre personnes : Geay Arthur, Sieg Alexandre, Délecrin Jérémie et Morin Valentin.
 
+Lien vers une version en ligne: [http://laravel-alternance.herokuapp.com/](http://laravel-alternance.herokuapp.com/)
+
 # Installation
 
 Vous devez d'abord posséder une plateforme de développement web telles **XAMPP** ou **WAMP**.
