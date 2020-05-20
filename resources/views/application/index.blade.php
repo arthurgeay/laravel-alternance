@@ -36,7 +36,27 @@
                             <td><span class="badge badge-warning">Rappel</span></td>
                         @endif
                         <td><a href="{{ route('application.edit', $application->id) }}">Editer une demande</a></td>
-                        <td><a href="{{ route('application.delete', $application->id) }}">Supprimer une demande</a></td>
+                        <td><a href="" data-toggle="modal" data-target="#exampleModalCenter">Supprimer une demande</a></td>
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Supprimer une demande</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                    Voulez-vous vraiment supprimer cette demande ?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                        <a href="{{ route('application.delete', $application->id) }}"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
                     </tr>
                 @endforeach
                 </tbody>
