@@ -93,7 +93,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                    <a href=""><button type="button" class="btn btn-danger">Supprimer</button></a>
+                                    <a href="{{ route('user.delete', Auth::user()->id) }}"><button type="button" class="btn btn-danger">Supprimer</button></a>
                                 </div>
                             </div>
                         </div>

@@ -47,3 +47,4 @@ Route::get('/application/delete/{id}', 'ApplicationController@delete')->name('ap
 
 /** USER */
 Route::get('/user', 'UserController@index')->name('user.index');
+Route::get('/user/delete/{id}', 'UserController@delete')->name('user.delete');
