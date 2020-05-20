@@ -23,7 +23,26 @@
                             </a></th>
                         <td><a href="{{ route('company.edit', $company->id) }}">Editer une entreprise</a></td>
                         <td><a href="{{ route('contact.create', $company->id) }}">Ajouter un contact</a></td>
-                        <td><a href="{{ route('company.delete', $company->id) }}">Supprimer une entreprise</a></td>
+                        <td><a href="" data-toggle="modal" data-target="#exampleModalCenter">Supprimer une entreprise</a></td>
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Supprimer l'entreprise</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                    Voulez-vous vraiment supprimer l'entreprise ?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                        <a href="{{ route('company.delete', $company->id) }}"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </tr>
                 @endforeach
                 </tbody>

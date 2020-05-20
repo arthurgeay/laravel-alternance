@@ -23,4 +23,11 @@ class UserController extends Controller
         $users = User::withCount('applications')->simplePaginate(10);
         return view('user.index', compact('users'));
     }
+    public function delete($userId)
+    {
+        $user = User::find($userId);
+        $user->delete();
+
+        return redirect()->route('user.index');
+    }
 }
