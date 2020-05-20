@@ -1,5 +1,6 @@
 const contactselector = document.querySelector("#contact");
 const companyselector = document.querySelector("#company");
+const firstContainer = document.querySelector("#mainContainer");
 
 function clearContact() {
     let allContact = document.querySelectorAll(".companyContact");
@@ -10,7 +11,9 @@ function clearContact() {
 
 function generateContacts(companyId) {
     fetch(
-        "http://localhost/laravel-alternance/public/api/company/" +
+        "http://localhost/" +
+            firstContainer.dataset.directory +
+            "/public/api/company/" +
             companyId +
             "?api_token=6co2Frg4Sbb73hF56M8Rfa5QChyw1ii7SANSD2c2ttNk4McG9zqATXFu2Pji"
     )

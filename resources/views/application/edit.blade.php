@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <?php
+        $allPath = dirname(__DIR__);
+        $explodePath = explode('\\', $allPath);
+        $directory = $explodePath[count($explodePath)-3];
+    ?>
+
+    <div class="container" id="mainContainer" data-directory="{{ $directory }}">
         <h1 class="text-center">Editer une demande</h1>
 
         <form action="{{ route('application.editStore', $application->id) }}" method="post">
