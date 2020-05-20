@@ -28,7 +28,7 @@ class ContactController extends Controller
         $request->validate([
             'fullname' => ['required'],
             'jobname' => ['required'],
-            'mail' => ['required', 'mail'],
+            'mail' => ['required', 'email'],
             'phone' => ['required'],
         ]);
 
@@ -54,7 +54,7 @@ class ContactController extends Controller
         $request->validate([
             'fullname' => ['required'],
             'jobname' => ['required'],
-            'mail' => ['required'],
+            'mail' => ['required', 'email'],
             'phone' => ['required'],
         ]);
 
