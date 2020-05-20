@@ -3,7 +3,11 @@
 @section('content')
     <?php
         $allPath = dirname(__DIR__);
-        $explodePath = explode('\\', $allPath);
+        if (strrpos($allPath, '/', 0) == false){
+            $explodePath = explode('\\', $allPath);
+        } else {
+            $explodePath = explode('/', $allPath);
+        }
         $directory = $explodePath[count($explodePath)-3];
     ?>
 
