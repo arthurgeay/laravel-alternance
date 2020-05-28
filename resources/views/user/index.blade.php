@@ -31,9 +31,9 @@
                 @endif
                 </span>
                 </h3>
-                <p style="font-size:1.2rem; margin-left:auto;display:inline-block;margin-bottom: 1.5rem">
-                        <span style="font-weight:bold;">{{ $user->applications_count }}</span> {{ $user->applications_count > 1 ? 'demandes' : 'demande'}}
-                </p>
+                    <p style="font-size:1.2rem; margin-left:auto;display:inline-block;margin-bottom: 1.5rem">
+                            <span style="font-weight:bold;">{{ $user->applications_count }}</span> {{ $user->applications_count > 1 ? 'demandes' : 'demande'}}
+                    </p>
                 </div>
             @endforeach
 

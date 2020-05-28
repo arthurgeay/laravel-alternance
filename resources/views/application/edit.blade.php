@@ -12,12 +12,12 @@
     ?>
 
     <div class="container" id="mainContainer" data-directory="{{ $directory }}">
-        <h1 class="text-center">Editer une demande</h1>
+        <h1 class="text-center" style="color: #007bff;font-weight:bold;margin:2rem;">Editer une demande</h1>
 
         <form action="{{ route('application.editStore', $application->id) }}" method="post">
             @csrf
             <div class="form-group">
-                <label for="company">Entreprise</label>
+                <label for="company" style="font-weight:bold;color: #007bff;">Entreprise</label>
                 <select class="form-control {{ $errors->has('company_id') ? 'is-invalid' : '' }}" id="company" name="company_id">
                     @foreach($companies as $company)
                         <option value="{{ $company->id }}" @if($application->company->id == $company->id) selected @endif}}>{{ $company->name }}</option>
@@ -29,8 +29,8 @@
                     </div>
                 @endif
             </div>
-            <div class="form-group">
-                <label for="contact">Contact de l'entreprise</label>
+            <div class="form-group" style="margin-top: 2rem;">
+                <label for="contact" style="font-weight:bold;color: #007bff;">Contact de l'entreprise</label>
                 <select class="form-control {{ $errors->has('contact_id') ? 'is-invalid' : '' }}" id="contact" name="contact_id">
                         @foreach($application->company->contacts as $contact)
                             <option class="companyContact" value="{{ $contact->id }}" @if($application->contact->id == $contact->id) selected @endif}}><strong>{{ $contact->fullname }}</strong> - {{ $contact->jobname }}</option>
@@ -42,8 +42,8 @@
                     </div>
                 @endif
             </div>
-            <div class="form-group">
-                <label for="contact_type">Type de contact</label>
+            <div class="form-group" style="margin-top: 2rem;">
+                <label for="contact_type" style="font-weight:bold;color: #007bff;">Type de contact</label>
                 <select class="form-control {{ $errors->has('contact_type') ? 'is-invalid' : '' }}" id="contact_type" name="contact_type">
                     <option value="tel" @if($application->contact_type == 'tel') selected @endif>Téléphone</option>
                     <option value="mail" @if($application->contact_type == 'mail') selected @endif>Mail</option>
@@ -56,8 +56,8 @@
                     </div>
                 @endif
             </div>
-            <div class="form-group">
-                <label for="description">Description</label>
+            <div class="form-group" style="margin-top: 2rem;">
+                <label for="description" style="font-weight:bold;color: #007bff;">Description</label>
                 <textarea id="description" name="description" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}">{{ old('description', $application->description) }}</textarea>
                 @if($errors->has('description'))
                     <div class="invalid-feedback">
@@ -65,8 +65,8 @@
                     </div>
                 @endif
             </div>
-            <div class="form-group">
-                <label for="state">Etat de la demande</label>
+            <div class="form-group" style="margin-top: 2rem;margin-bottom:2rem;">
+                <label for="state" style="font-weight:bold;color: #007bff;">Etat de la demande</label>
                 <select class="form-control {{ $errors->has('contact_state') ? 'is-invalid' : '' }}" id="state" name="state">
                     <option value="to-do" @if($application->state == 'to-do') selected @endif>A faire</option>
                     <option value="in-progress" @if($application->state == 'in-progress') selected @endif>En cours</option>
@@ -79,7 +79,7 @@
                     </div>
                 @endif
             </div>
-            <input type="button" value="Retour" class="btn btn-primary" onclick="history.go(-1)">
+            <input type="button" value="Retour" class="btn" style="border: 1px solid gray;" onclick="history.go(-1)">
             <button type="submit" class="btn btn-primary">Modifier</button>
         </form>
         <script src="{{ asset('js/contact.js') }}"></script>

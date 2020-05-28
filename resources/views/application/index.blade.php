@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-center">Vos demandes</h1>
+        <h1 class="text-center"  style="color: #007bff;font-weight:bold;">Vos demandes</h1>
         <a href="{{ route('application.create') }}" class="btn btn-primary mb-2">Ajouter une demande</a>
         <div class="d-flex flex-row align-items-center">
             <p class="mb-0">Trier par</p>
@@ -35,23 +35,23 @@
                         @else
                             <td><span class="badge badge-warning">Rappel</span></td>
                         @endif
-                        <td><a href="{{ route('application.edit', $application->id) }}">Editer une demande</a></td>
-                        <td><a href="" data-toggle="modal" data-target="#exampleModalCenter">Supprimer une demande</a></td>
+                        <td><a href="{{ route('application.edit', $application->id) }}" class="text-success font-weight-bold">Editer une demande</a></td>
+                        <td><a href="" data-toggle="modal" data-target="#exampleModalCenter" class="text-danger font-weight-bold">Supprimer une demande</a></td>
                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Supprimer une demande</h5>
+                                    <div class="modal-header" style="border-bottom: 0;">
+                                        <h5 class="modal-title text-danger font-weight-bold" id="exampleModalLongTitle">Supprimer une demande</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body">
+                                    <div class="modal-body" style="margin-bottom: 2rem;">
                                     Voulez-vous vraiment supprimer cette demande ?
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                        <a href="{{ route('application.delete', $application->id) }}"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                                        <button type="button" class="btn btn-secondary font-weight-bold" data-dismiss="modal">Annuler</button>
+                                        <a href="{{ route('application.delete', $application->id) }}"><button type="button" class="btn btn-danger font-weight-bold">Supprimer</button></a>
                                     </div>
                                 </div>
                             </div>
