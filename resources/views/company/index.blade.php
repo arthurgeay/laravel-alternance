@@ -21,20 +21,20 @@
                     <tr>
                         <th scope="row"><img src="{{ $company->img ? $company->img : 'building.png' }}" style="max-width: 25px; max-height: 25px; margin-right: 10px;"><a href="{{ route('company.show', $company->id) }}">{{ $company->name }}
                             </a></th>
-                        <td><a href="{{ route('company.edit', $company->id) }}">Editer une entreprise</a></td>
-                        <td><a href="{{ route('contact.create', $company->id) }}">Ajouter un contact</a></td>
-                        <td><a href="" data-toggle="modal" data-target="#exampleModalCenter">Supprimer une entreprise</a></td>
+                        <td><a href="{{ route('company.edit', $company->id) }}" style="color: green;font-weight:bold;">Editer une entreprise</a></td>
+                        <td><a href="{{ route('contact.create', $company->id) }}" style="color: rgba(0,0,0,0.4);font-weight:bold;">Ajouter un contact</a></td>
+                        <td><a href="" data-toggle="modal" data-target="#exampleModalCenter" style="color: red;font-weight:bold;">Supprimer une entreprise</a></td>
                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Supprimer l'entreprise</h5>
+                                    <div class="modal-header" style="border-bottom: 0;">
+                                        <h5 class="modal-title text-danger font-weight-bold" id="exampleModalLongTitle">Supprimer une entreprise</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body">
-                                    Voulez-vous vraiment supprimer l'entreprise ?
+                                    <div class="modal-body" style="margin-bottom: 2rem;">
+                                    Voulez-vous vraiment supprimer cette entreprise ?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>

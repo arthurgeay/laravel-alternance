@@ -43,7 +43,7 @@
                 </form>
             </div>
             <div class="card">
-                <div class="card-header">Bonjour {{ Auth::user()->name }}, vous êtes membres
+                <div class="card-header">Bonjour {{ Auth::user()->name }}, vous êtes membre
                 @if (Auth::user()->alcohol == 0)
                         @if ($badge < 10)
                             <span class="text-secondary font-weight-bold">chômeurs RSA</span>
@@ -73,12 +73,12 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    Votre nombre de demande est de <span class="text-success font-weight-bold">{{ $badge }}</span><br>
+                    Votre nombre de demande est de <span class="text-success font-weight-bold" style="font-size: 1.5rem;">{{ $badge }}</span><br>
                     Adresse mail: <span class="text-primary font-weight-bold">{{ Auth::user()->email }}</span><br>
                     Inscrit le : <span class="text-success font-weight-bold">{{ Auth::user()->created_at }}</span>
                 </div>
             </div>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Supprimer votre compte</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 1rem;">Supprimer votre compte</button>
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
