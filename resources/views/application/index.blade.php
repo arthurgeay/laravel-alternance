@@ -36,7 +36,7 @@
                             <td><span class="badge badge-warning">Rappel</span></td>
                         @endif
                         <td><a href="{{ route('application.edit', $application->id) }}">Editer une demande</a></td>
-                        <td><a href="" data-toggle="modal" data-target="#exampleModalCenter">Supprimer une demande</a></td>
+                        <td><a href="{{ route('application.delete', $application->id) }}" data-toggle="modal" data-target="#exampleModalCenter">Supprimer une demande</a></td>
                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
