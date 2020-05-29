@@ -215,7 +215,8 @@ table {
 
 td,
 th {
-    padding: 0
+    padding: 0;
+    vertical-align: initial!important;
 }
 
 .content h1,

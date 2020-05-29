@@ -10,19 +10,21 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">Nom de l'entreprise</th>
-                    <th scope="col">Editer</th>
-                    <th scope="col">Contacts</th>
-                    <th scope="col">Supprimer</th>
+                    <th scope="col" style="color: #007bff;font-size:1.2rem;">Nom de l'entreprise</th>
+                    <th scope="col"  style="color: #007bff;font-size:1.2rem;">Editer</th>
+                    <th scope="col"  style="color: #007bff;font-size:1.2rem;">Contacts</th>
+                    <th scope="col"  style="color: #007bff;font-size:1.2rem;">Supprimer</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($companies as $company)
                     <tr>
-                        <th scope="row"><img src="{{ $company->img ? $company->img : 'building.png' }}" style="max-width: 25px; max-height: 25px; margin-right: 10px;"><a href="{{ route('company.show', $company->id) }}">{{ $company->name }}
-                            </a></th>
+                        <th scope="row">
+                        <img src="{{ $company->img ? $company->img : 'building.png' }}" style="max-width: 75px; max-height: 75px; margin-right: 10px;border-radius: 5px;">
+                            <a href="{{ route('company.show', $company->id) }}" style="margin-left: 1rem;font-size: 1.2rem;">{{ $company->name }}</a>
+                        </th>
                         <td><a href="{{ route('company.edit', $company->id) }}" style="color: green;font-weight:bold;">Editer une entreprise</a></td>
-                        <td><a href="{{ route('contact.create', $company->id) }}" style="color: rgba(0,0,0,0.4);font-weight:bold;">Ajouter un contact</a></td>
+                        <td><a href="{{ route('contact.create', $company->id) }}" style="color: LimeGreen;font-weight:bold;">Ajouter un contact</a></td>
                         <td><a href="" data-toggle="modal" data-target="#exampleModalCenter" style="color: red;font-weight:bold;">Supprimer une entreprise</a></td>
                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">

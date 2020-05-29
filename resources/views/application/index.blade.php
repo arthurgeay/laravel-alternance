@@ -16,10 +16,10 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">Nom de l'entreprise</th>
-                    <th scope="col">Statut</th>
-                    <th scope="col">Editer</th>
-                    <th scope="col">Supprimer</th>
+                    <th scope="col" style="color: #007bff;font-size:1.2rem;font-weight:bold;">Nom de l'entreprise</th>
+                    <th scope="col" style="color: black;font-size:1.2rem;">Statut</th>
+                    <th scope="col" style="color: green;font-size:1.2rem;">Editer</th>
+                    <th scope="col" style="color: red;font-size:1.2rem;">Supprimer</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,8 +35,8 @@
                         @else
                             <td><span class="badge badge-warning">Rappel</span></td>
                         @endif
-                        <td><a href="{{ route('application.edit', $application->id) }}">Editer une demande</a></td>
-                        <td><a href="{{ route('application.delete', $application->id) }}" data-toggle="modal" data-target="#application{{$application->id}}">Supprimer une demande</a></td>
+                        <td><a href="{{ route('application.edit', $application->id) }}" style="color: green;font-weight:bold;">Editer une demande</a></td>
+                        <td><a href="{{ route('application.delete', $application->id) }}" data-toggle="modal" style="color: red;font-weight:bold;" data-target="#application{{$application->id}}">Supprimer une demande</a></td>
                         <div class="modal fade" id="application{{$application->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">

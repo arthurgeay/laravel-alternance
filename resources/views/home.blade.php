@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="flex-row d-flex align-items-center justify-content-between">
-                <h1>{{ Auth::user()->name }}
+                <h1 style="color: #007bff;font-weight:bold;">{{ Auth::user()->name }}
                     <span class="badge">
                     @if (Auth::user()->alcohol == 0)
                         @if ($badge < 10)
@@ -43,26 +43,26 @@
                 </form>
             </div>
             <div class="card">
-                <div class="card-header">Bonjour {{ Auth::user()->name }}, vous êtes membre
+                <div class="card-header" style="background-color: #007bff; color: white;">Bonjour {{ Auth::user()->name }}, vous êtes membre
                 @if (Auth::user()->alcohol == 0)
                         @if ($badge < 10)
-                            <span class="text-secondary font-weight-bold">chômeurs RSA</span>
+                            <span class="text-secondary font-weight-bold badge badge-light">chômeurs RSA</span>
                         @elseif ($badge >= 10 and $badge < 30)
-                            <span class="text-success font-weight-bold">WATIBULLE CLASSIC</span>
+                            <span class="text-success font-weight-bold badge badge-light">WATIBULLE CLASSIC</span>
                         @elseif ($badge >= 30 and $badge < 50) 
-                            <span class="text-danger font-weight-bold">WATIBULLE ROSE</span>
+                            <span class="text-danger font-weight-bold badge badge-light">WATIBULLE ROSE</span>
                         @elseif ($badge >= 50 and $badge < 100) 
-                            <span class="text-warning font-weight-bold">WATIBULLE GOLD</span>
+                            <span class="text-warning font-weight-bold badge badge-light">WATIBULLE GOLD</span>
                         @endif
                     @else
                         @if ($badge < 10)
-                            <span class="text-secondary font-weight-bold">chômeurs RSA</span>
+                            <span class="text-secondary font-weight-bold badge badge-light">chômeurs RSA</span>
                         @elseif ($badge >= 10 and $badge < 30)
-                            <span class="text-success font-weight-bold">Panaché</span>
+                            <span class="text-success font-weight-bold badge badge-light">Panaché</span>
                         @elseif ($badge >= 30 and $badge < 50) 
-                            <span class="text-danger font-weight-bold">GRIMBERGEN</span>
+                            <span class="text-danger font-weight-bold badge badge-light">GRIMBERGEN</span>
                         @elseif ($badge >= 50 and $badge < 100) 
-                            <span class="text-warning font-weight-bold">CORONA KING</span>
+                            <span class="text-warning font-weight-bold badge badge-light">CORONA KING</span>
                         @endif
                     @endif
                 </div>
