@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="flex-row d-flex align-items-center justify-content-between">
+            <div class="flex-row d-flex align-items-center justify-content-between" style="margin-top:2rem;">
                 <h1 style="color: #007bff;font-weight:bold;">{{ Auth::user()->name }}
                     <span class="badge">
                     @if (Auth::user()->alcohol == 0)
@@ -35,14 +35,14 @@
                     <input type="hidden" name="userId" value="{{ Auth::user()->id }}">
                     @if (Auth::user()->alcohol)
                         <input type="hidden" value="0" name="newAlcohol">
-                        <input class="btn btn-info" type="submit" value="Je ne bois pas d'alcool !">
+                        <input class="btn btn-warning" type="submit" value="Je ne bois pas d'alcool !">
                     @else
                         <input type="hidden" value="1" name="newAlcohol">
-                        <input class="btn btn-info" type="submit" value="Je suis un gros soifard !">
+                        <input class="btn btn-warning" type="submit" value="Je suis un gros soifard !">
                     @endif
                 </form>
             </div>
-            <div class="card">
+            <div class="card" style="margin-top:2rem;">
                 <div class="card-header" style="background-color: #007bff; color: white;">Bonjour {{ Auth::user()->name }}, vous êtes membre
                 @if (Auth::user()->alcohol == 0)
                         @if ($badge < 10)
@@ -73,9 +73,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    Votre nombre de demande est de <span class="text-success font-weight-bold" style="font-size: 1.5rem;">{{ $badge }}</span><br>
-                    Adresse mail: <span class="text-primary font-weight-bold">{{ Auth::user()->email }}</span><br>
-                    Inscrit le : <span class="text-success font-weight-bold">{{ Auth::user()->created_at }}</span>
+                    <div style="display:flex;">
+                        <div style="background-color: rgba(0,0,0,0.07); display:flex;flex-direction:column;border-radius:5px;padding: 0 1rem;">
+                            <span class="text-primary font-weight-bold" style="font-size: 4rem;">{{ $badge }}</span>
+                            <p style="font-size:.8rem;">demandes effectuées</p>
+                        </div>
+                        <div style="align-self:flex-start;margin-left:2rem;display:flex;flex-direction:column;">
+                            <span style="font-weight:bold;font-size:.8rem;">Adresse mail:</span><span class="text-primary font-weight-bold">{{ Auth::user()->email }}</span>
+                            <span style="font-weight:bold;font-size:.8rem;margin-top:2rem;">Inscrit le :</span><span class="text-success font-weight-bold">{{ Auth::user()->created_at }}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 1rem;">Supprimer votre compte</button>

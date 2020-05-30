@@ -9,11 +9,11 @@
         <div class="table-responsive">
             <table class="table">
                 <thead>
-                <tr>
-                    <th scope="col" style="color: #007bff;font-size:1.2rem;">Nom de l'entreprise</th>
-                    <th scope="col"  style="color: #007bff;font-size:1.2rem;">Editer</th>
-                    <th scope="col"  style="color: #007bff;font-size:1.2rem;">Contacts</th>
-                    <th scope="col"  style="color: #007bff;font-size:1.2rem;">Supprimer</th>
+                <tr style="height:5rem;">
+                    <th scope="col" style="color: #007bff;font-size:1.4rem;">Nom de l'entreprise</th>
+                    <th scope="col"  style="color: green;font-size:1.4rem;">Editer</th>
+                    <th scope="col"  style="color: limegreen;font-size:1.4rem;">Contacts</th>
+                    <th scope="col"  style="color: red;font-size:1.4rem;">Supprimer</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -23,9 +23,9 @@
                         <img src="{{ $company->img ? $company->img : 'building.png' }}" style="max-width: 75px; max-height: 75px; margin-right: 10px;border-radius: 5px;">
                             <a href="{{ route('company.show', $company->id) }}" style="margin-left: 1rem;font-size: 1.2rem;">{{ $company->name }}</a>
                         </th>
-                        <td><a href="{{ route('company.edit', $company->id) }}" style="color: green;font-weight:bold;">Editer une entreprise</a></td>
-                        <td><a href="{{ route('contact.create', $company->id) }}" style="color: LimeGreen;font-weight:bold;">Ajouter un contact</a></td>
-                        <td><a href="" data-toggle="modal" data-target="#exampleModalCenter" style="color: red;font-weight:bold;">Supprimer une entreprise</a></td>
+                        <td><a href="{{ route('company.edit', $company->id) }}" style="color: green;font-weight:bold;font-size: .8rem;">Editer une entreprise</a></td>
+                        <td><a href="{{ route('contact.create', $company->id) }}" style="color: LimeGreen;font-weight:bold;font-size: .8rem;">Ajouter un contact</a></td>
+                        <td><a href="" data-toggle="modal" data-target="#exampleModalCenter" style="color: red;font-weight:bold;font-size: .8rem;">Supprimer une entreprise</a></td>
                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">

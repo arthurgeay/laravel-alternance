@@ -76,7 +76,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" style="color: #007bff;font-weight:bold;border:1px solid #007bff;border-radius:5px;padding-left:15px;" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -92,6 +92,7 @@
                                     </form>
                                 </div>
                             </li>
+                            <li><a class="nav-link" href="{{ url('/docs') }}">API Docs</a></li>
                         @endguest
                     </ul>
                 </div>
