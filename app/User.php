@@ -37,6 +37,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // Specifies that a user has many applications
     public function applications() {
         return $this->hasMany(Application::class);
     }
