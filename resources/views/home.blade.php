@@ -1,3 +1,4 @@
+<!-- Home page with user information -->
 @extends('layouts.app')
 
 @section('content')

@@ -1,3 +1,4 @@
+<!-- Users list with badge -->
 @extends('layouts.app')
 
 @section('content')

@@ -1,3 +1,4 @@
+<!-- Contact creation page -->
 @extends('layouts.app')
 
 @section('content')

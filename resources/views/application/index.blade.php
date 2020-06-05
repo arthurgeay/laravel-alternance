@@ -1,3 +1,4 @@
+<!-- Application main page -->
 @extends('layouts.app')
 
 @section('content')
