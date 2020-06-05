@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ApiCompanyController extends Controller
 {
+    /**
+     * Show a company details with contacts
+     * @param $companyId - ID of a company
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function show($companyId)
     {
         $company = Company::with('contacts')->where('id', $companyId)->first();

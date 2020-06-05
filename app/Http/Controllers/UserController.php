@@ -18,11 +18,22 @@ class UserController extends Controller
     {
         $this->middleware('auth');
     }
+
+    /**
+     * Show all users with pagination
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $users = User::withCount('applications')->simplePaginate(10);
         return view('user.index', compact('users'));
     }
+
+    /**
+     * Delete a user
+     * @param $userId - Id of a user
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function delete($userId)
     {
         $user = User::find($userId);

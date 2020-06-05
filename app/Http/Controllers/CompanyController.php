@@ -18,6 +18,10 @@ class CompanyController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * Show all companies with pagination
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $companies = Company::simplePaginate(10);
@@ -26,7 +30,7 @@ class CompanyController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Create a new company
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -35,6 +39,11 @@ class CompanyController extends Controller
         return view('company.create');
     }
 
+    /**
+     * Store a new company
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $request->validate([
@@ -58,6 +67,11 @@ class CompanyController extends Controller
 
     }
 
+    /**
+     * Show a company
+     * @param $companyId - Id of a company
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show($companyId)
     {
         $company = Company::where('id', $companyId)->first();
@@ -66,12 +80,23 @@ class CompanyController extends Controller
         return view('company.show', compact(['company', 'contacts']));
     }
 
+    /**
+     * Edit a company
+     * @param $companyId - Id of a company
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit($companyId)
     {
         $company = Company::where('id', $companyId)->first();
         return view('company.edit', compact('company'));
     }
 
+    /**
+     * Store an edited company
+     * @param Request $request
+     * @param $companyId
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function editStore(Request $request, $companyId)
     {
         $request->validate([
@@ -97,6 +122,11 @@ class CompanyController extends Controller
 
     }
 
+    /**
+     * Delete a company
+     * @param $companyId - Id of a company
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function delete($companyId)
     {
         $company = Company::find($companyId);

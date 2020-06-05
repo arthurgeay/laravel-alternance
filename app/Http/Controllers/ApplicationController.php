@@ -20,18 +20,31 @@ class ApplicationController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * Return applications of user
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $applications = Application::where('user_id', Auth::user()->getAuthIdentifier())->get();
         return view('application.index', compact('applications'));
     }
 
+    /**
+     * Create a new application
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create()
     {
         $companies = Company::with('contacts')->get();
         return view('application.create', compact('companies'));
     }
 
+    /**
+     * Store in database the new application
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $request->validate([
@@ -54,6 +67,11 @@ class ApplicationController extends Controller
         return redirect()->route('application.home');
     }
 
+    /**
+     * Edit an appplication
+     * @param $applicationId - Id of application
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit($applicationId)
     {
 
@@ -62,6 +80,12 @@ class ApplicationController extends Controller
         return view('application.edit', compact(['companies', 'application']));
     }
 
+    /**
+     * Store an edited application
+     * @param Request $request
+     * @param $applicationId
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function editStore(Request $request, $applicationId)
     {
         $request->validate([
@@ -85,6 +109,11 @@ class ApplicationController extends Controller
         return redirect()->route('application.home');
     }
 
+    /**
+     * Delete an application
+     * @param $applicationId - Id of application
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function delete($applicationId)
     {
         $application = Application::find($applicationId);

@@ -21,9 +21,8 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * Show page of profile
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
@@ -31,6 +30,11 @@ class HomeController extends Controller
         return view('home', compact('badge'));
     }
 
+    /**
+     * Store in db if the user drinks or not
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function alcohol(Request $request){
         $user = Auth::user();
         $user->alcohol = $request->get('newAlcohol');
