@@ -25,8 +25,8 @@
                         </th>
                         <td><a href="{{ route('company.edit', $company->id) }}" style="color: green;font-weight:bold;font-size: .8rem;">Editer une entreprise</a></td>
                         <td><a href="{{ route('contact.create', $company->id) }}" style="color: LimeGreen;font-weight:bold;font-size: .8rem;">Ajouter un contact</a></td>
-                        <td><a href="" data-toggle="modal" data-target="#exampleModalCenter" style="color: red;font-weight:bold;font-size: .8rem;">Supprimer une entreprise</a></td>
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <td><a href="{{ route('company.delete', $company->id) }}" data-toggle="modal" data-target="#company-{{$company->id}}" style="color: red;font-weight:bold;font-size: .8rem;">Supprimer une entreprise</a></td>
+                        <div class="modal fade" id="company-{{$company->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header" style="border-bottom: 0;">
