@@ -5,6 +5,7 @@
         <h1>Editer une entreprise</h1>
         <form method="post" action="{{ route('company.editStore', $company->id) }}">
             @csrf
+            
             <div style="text-align: center;">
                 <img src="{{ $company->img ? $company->img : '' }}" style="max-width: 80px; max-height: 80px;">
             </div>
@@ -59,7 +60,7 @@
 
             <div class="form-group">
                 <label for="phone">Lien du logo <i>(optionnel)<i></label>
-                <input type="text" id="imgLink" class="form-control" name="imgLink" value="{{ old('imgLink') }}"/>
+                <input type="text" id="imgLink" class="form-control" name="imgLink" value="{{ old('imgLink', $company->imgLink) }}"/>
             </div>
             <input type="button" value="Retour" class="btn btn-primary" onclick="history.go(-1)">
             <button type="submit" class="btn btn-success" >Modifier</button>
