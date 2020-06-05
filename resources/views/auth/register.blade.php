@@ -1,3 +1,4 @@
+<!-- Register Page -->
 @extends('layouts.app')
 
 @section('content')

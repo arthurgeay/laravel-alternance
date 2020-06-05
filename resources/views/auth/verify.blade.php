@@ -1,3 +1,4 @@
+<!-- E-mail Address Verification Page -->
 @extends('layouts.app')
 
 @section('content')

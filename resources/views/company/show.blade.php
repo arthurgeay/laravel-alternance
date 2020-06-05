@@ -1,3 +1,4 @@
+<!-- Company view page -->
 @extends('layouts.app')
 
 @section('content')
