@@ -12,7 +12,6 @@ Lien vers une version en ligne: [http://laravel-alternance.herokuapp.com/](http:
 
 Vous devez d'abord posséder une plateforme de développement web telles **XAMPP** ou **WAMP**.
 
-
 XAMPP : [https://www.apachefriends.org/fr/download.html](https://www.apachefriends.org/fr/download.html)
 
 WAMP : [https://sourceforge.net/projects/wampserver/](https://sourceforge.net/projects/wampserver/)
@@ -21,8 +20,8 @@ Installez Composer.
 
 Composer : [https://getcomposer.org/download/](https://getcomposer.org/download/)
 
-Ensuite ouvrer Composer et entrer la commande suivante pour installer Laravel :
-```composer global require laravel/installer ```
+Ensuite ouvrez Composer et entrer la commande suivante pour installer Laravel :
+`composer global require laravel/installer`
 
 ## Partie 1 - Clôner le git
 
@@ -32,12 +31,13 @@ Chemin (exemple) : **C:\xampp\htdocs**
 
 Faites la commande suivant en ouvrant un terminal **GIT** :
 
-```git clone https://github.com/arthurgeay/laravel-alternance.git```
+`git clone https://github.com/arthurgeay/laravel-alternance.git`
 
 ## Partie 2 - Initialiser le projet
+
 Ouvrez le projet avec un éditeur telles **Visual Studio Code** par exemple.
 
-Allez dans le **terminal** et entrez la commande : ```composer install```
+Allez dans le **terminal** et entrez la commande : `composer install`
 
 ## Partie 3 - Démarrer votre serveur web
 
